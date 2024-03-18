@@ -2,19 +2,6 @@ body{
     background-color: aqua;
 }
 
-
-svg{
-    position:fixed; 
-    top:0; 
-    left:0; 
-    height:90vh; 
-    width:90vw;
-    margin: 0 4rem 2rem 2rem;
-
-    padding: 1rem;
-    border: 2px solid #000;
-}
-
 #copyright{
     position: fixed;
     bottom: 0;
@@ -24,4 +11,141 @@ svg{
     padding: 0.6rem;
     background-color: #000;
     color: #fff;
+}
+
+svg{
+    position:fixed; 
+    top:100%; 
+    left:0;
+    height:90vh; 
+    width:90vw;
+    margin: 0 4rem 2rem 2rem;
+    padding: 1rem;
+
+    animation: slideIn 60s ease-in-out infinite;
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateY(100%);
+        display: block;
+        top: 100%;
+    }
+    5%{
+        transform: translateY(0);
+        top: 0;
+    }
+    100% {
+        transform: translateY(0);
+        top: 0;
+    }
+}
+
+#PLetter, #ALetter, #MLetter{
+    animation: slideUp 60s ease-in-out infinite;
+}
+
+#ALetter{
+    animation-delay: 0.5s;
+}
+#MLetter{
+    animation-delay: 1s;
+}
+
+@keyframes slideUp {
+    0% {
+        transform: translateY(100%);
+        display: block;
+        top: 100%;
+    }
+    10%{
+        transform: translateY(0);
+        top: 0;
+    }
+    100% {
+        transform: translateY(0);
+        top: 0;
+    }
+}
+
+#stones, #grass{
+    animation: slideUp2 30s ease-in-out;
+    animation-iteration-count: 1;
+    animation-delay: 6s;
+    display: none;
+}
+
+@keyframes slideUp2 {
+    0% {
+        transform: translateY(100%);
+        display: block;
+        top: 100%;
+    }
+    10%{
+        transform: translateY(0);
+        top: 0;
+    }
+    100% {
+        transform: translateY(0);
+        top: 0;
+    }
+}
+
+#palmSmall, #palmBig{
+    position: fixed;
+    animation: slideUp3 54s ease-in-out infinite;
+                /*grow 4s ease-in-out;*/
+    animation-delay: 8s;
+    display: none;
+}
+
+@keyframes slideUp3 {
+    0% {
+        top: 100%;
+        opacity: 0;
+        display: none;
+    }
+    10%{
+        top: 0;
+        opacity: 1;
+        display: block;
+    }
+    100% {
+        top: 0;
+        opacity: 1;
+    }
+}
+
+#leaf1, #leaf2, #leaf3, #leaf4 {
+    z-index: 1;
+    animation: grow 30s ease-in,
+                wave 4s ease-in-out infinite;
+}
+
+@keyframes grow {
+    0% {
+        opacity: 0;
+    }
+    50%{
+        opacity: 0.8;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes wave {
+    0% {
+        transform: rotate3d(0, 1, 0, 0deg);
+        transform: rotate(0deg);
+        transform-origin: top;
+    }
+    50%{
+        transform: rotate3d(0, 1, 0, 10deg);
+        transform: rotate(1deg);
+    }
+    100% {
+        transform: rotate3d(0, 1, 0, 0deg);
+        transform: rotate(0deg);
+    }
 }

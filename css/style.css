@@ -69,10 +69,9 @@ svg{
 }
 
 #stones, #grass{
-    animation: slideUp2 30s ease-in-out;
-    animation-iteration-count: 1;
-    animation-delay: 6s;
-    display: none;
+    animation: slideUp2 58.5s ease-in-out infinite;
+    animation-delay: 1.5s;
+    
 }
 
 @keyframes slideUp2 {
@@ -93,17 +92,15 @@ svg{
 
 #palmSmall, #palmBig{
     position: fixed;
-    animation: slideUp3 54s ease-in-out infinite;
+    animation: slideUp3 60s ease-in-out infinite;
                 /*grow 4s ease-in-out;*/
     animation-delay: 8s;
-    display: none;
+    opacity: 0;
 }
 
 @keyframes slideUp3 {
     0% {
-        top: 100%;
         opacity: 0;
-        display: none;
     }
     10%{
         top: 0;
@@ -116,36 +113,44 @@ svg{
     }
 }
 
-#leaf1, #leaf2, #leaf3, #leaf4 {
+#leaf1, #leaf2, #leaf3, #leaf4, #leaf5 {
     z-index: 1;
     animation: grow 30s ease-in,
-                wave 4s ease-in-out infinite;
+                wave 6s ease-in-out infinite;
+    animation-delay: 12s;
 }
 
 @keyframes grow {
     0% {
-        opacity: 0;
+        transform: scale(0);
     }
     50%{
-        opacity: 0.8;
+        transform: scale(1.5) rotate3d(0, 1, 0, 0deg);
     }
     100% {
-        opacity: 1;
+        transform: scale(1) rotate3d(0, 1, 0, 0deg);
     }
 }
 
 @keyframes wave {
     0% {
         transform: rotate3d(0, 1, 0, 0deg);
-        transform: rotate(0deg);
-        transform-origin: top;
+       
     }
-    50%{
-        transform: rotate3d(0, 1, 0, 10deg);
-        transform: rotate(1deg);
+    30%{
+        transform: rotate3d(0, 1, 0, 7deg);
+    }
+    60%{
+        transform: rotate3d(0, 1, 0, -7deg);
     }
     100% {
         transform: rotate3d(0, 1, 0, 0deg);
-        transform: rotate(0deg);
     }
 }
+
+#leaf6, #leaf7, #leaf8, #leaf9, #leaf10 {
+    z-index: 2;
+    animation: wave 6s ease-in-out infinite;
+    animation-delay: 13s;
+}
+
